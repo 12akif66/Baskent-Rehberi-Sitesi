@@ -19,10 +19,49 @@
     </header>
 
     <main>
-        <section>
+        <section id="ziyaretci-defteri">
             <h2>Ziyaretçi Defteri</h2>
-            <p>Ziyaretçi yorum formu ve listesi haftaya buraya yapılacak</p>
-            <br>
+            <p>Ankara'daki geziniz nasıldı? Deneyimlerinizi ve mekan önerilerinizi bizimle paylaşın.</p>
+            <hr>
+
+            
+            <form action="#" method="get" id="yorumFormu">
+                <p>
+                    <label for="adsoyad">Adınız Soyadınız:</label><br>
+                    <!-- isim -->
+                    <input type="text" id="adsoyad" name="adsoyad" placeholder="Örn. Mehmet Akif" required>
+                </p>
+                
+                <p>
+                    Ziyaret Amacınız:<br>
+                    <!-- tekli seçmeli -->
+                    <input type="radio" id="turistik" name="amac" value="turistik" checked>
+                    <label for="turistik">Turistik Gezi</label>
+                    
+                    <input type="radio" id="ogrenci" name="amac" value="ogrenci">
+                    <label for="ogrenci">Öğrencilik / Eğitim</label>
+                </p>
+
+                <p>
+                    <label for="favori">En Sevdiğiniz Yer:</label><br>
+                    <!-- Açılır liste -->
+                    <select id="favori" name="favori">
+                        <option value="anitkabir">Anıtkabir</option>
+                        <option value="kale">Ankara Kalesi</option>
+                        <option value="kugulu">Kuğulu Park</option>
+                        <option value="diger">Diğer (Lütfen yorumda belirtin)</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="yorum">Yorumunuz ve Mekan Öneriniz:</label><br>
+                    <!-- Uzun metin -->
+                    <textarea id="yorum" name="yorum" rows="4" cols="40" required></textarea>
+                </p>
+
+                <!-- Form gönderme butonu -->
+                <button type="submit">Yorumu Gönder</button>
+            </form>
         </section>
     </main>
 
