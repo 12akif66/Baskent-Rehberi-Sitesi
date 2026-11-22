@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+/*Kullanacağım renkler */
+:root {
+    --ana-renk: #6B1D2A;
+    --vurgu-renk: #E09F3E;
+    --baglanti-renk: #8C2F39;
+    --zemin: #EAE4DC;
+    --metin: #1F2937;
+    --kenar: #D0D5DD;
+}
+
+/*Yazı tipi kısmı*/
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--metin);
+    background-color: var(--zemin);
+}
+
+
+
+h2, h3 {
+    color: var(--ana-renk);
+}
+/* Genel link rengi ve fareyle üzerine gelince renk değişimi */
+a {
+    color: var(--baglanti-renk);
+}
+
+a:hover {
+    color: var(--vurgu-renk);
+}
+
+
+/* Üst Çubuk ve Menü */
+header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+    background-color: var(--ana-renk);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: white;
+}
+/* Menüyü en sağa yaslar */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.aktif {
+    background-color: var(--vurgu-renk);
+    color: var(--ana-renk);
+    font-weight: bold;
+}
+
+
+/* Sayfa içeriğini ortada duran beyaz bir kart haline getirmek için */
+main {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+/* İçerik ve Fotoğraflar */
+article {
+    margin-bottom: 24px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}  
+/* Mekan ve yemek fotoğraflarını yazılarla aynı genişliğe getirimek için */
+article img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+/* Ana Sayfa 4'lü Manzara Galerisi */
+.manzara-galeri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.manzara-galeri img {
+    width: 48%;
+}
+
+
+/*Tablolar için */
+/* Tablonun dar ekranda sayfayı bozmadan yana kayması için */
+.tablo-kutu {
+    overflow-x: auto;
+} 
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--kenar);
+}
+
+th {
+    background-color: var(--ana-renk);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--zemin);
+}
+
+
+/*Form kısmını özelleiştirmek için*/
+
+input, select, textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 10px;
+    border: 1px solid var(--kenar);
+    border-radius: 6px;
+    font: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--vurgu-renk);
+}
+
+button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--vurgu-renk);
+    color: var(--ana-renk);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--ana-renk);
+    color: white;
+}
+
+/* Alt bilgi formunu ortalamak ve küçültmek için */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* Mobilde giriş için media kısmı */
+
+/* Mobil Uyum için Ekran 600 piksel veya daha dar olunca devreye girer */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-left: 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    main {
+        margin: 12px;
+        padding: 16px;
+    }
+
+    .manzara-galeri img {
+        width: 100%;
+    }
+}
